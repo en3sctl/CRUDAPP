@@ -7,6 +7,7 @@ from sqlalchemy.ext.declarative import declarative_base
 # create base model
 Base = declarative_base()
 
+
 # define models
 class Category(Base):
     __tablename__ = 'Category'
@@ -28,8 +29,9 @@ class Task(Base):
 
     category = relationship("Category", back_populates="tasks")
 
+
 # create engine and session
-engine = create_engine("sqlite:///mydb.db",echo=True)
+engine = create_engine("sqlite:///mydb.db", echo=True)
 Base.metadata.create_all(bind=engine)
 Session = sessionmaker(bind=engine)
 session = Session()

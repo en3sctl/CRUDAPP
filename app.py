@@ -58,7 +58,7 @@ app.update_task(task_id, title='Finish project earlier')
 task = app.get_task(task_id)
 print(task.title, task.description, task.due_date, task.category.name)
 
-# this two lines can be wrong i couldnt make it
+# this two lines can be wrong i couldn't make it
 def db_session():
     return Session()
 
